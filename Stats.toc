@@ -1,0 +1,7 @@
+## Interface: 11303
+## Title: Rinku's Advanced Stats
+## Notes: Shows some relevant Character stats in a movable Frame.
+## Current Author: Rinku
+## Version: 0.1.5
+
+Stats.lua
