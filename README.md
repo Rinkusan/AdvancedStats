@@ -1,9 +1,9 @@
 # AdvancedStats
 Rinku's Advanced Stats
 
-Advanced Stats is an AddOn that keeps all of your important stats on your screen at all times.
+Advanced Stats is an AddOn for Classic World of WarCraft that keeps all of your important stats on your screen at all times.
 I was a bit sick of using Macro's to fetch all of my Stats like Hit, Spellcrit, Bonus Healing and so on and so forth.
-So now I started with tanking stats & also included a calculation of tankiness and threat values for Druids, based on Taladrils Gear List Stat Values, which he assures me are accurately calculated and tested.
+So now I started with Feral tanking stats & also included a calculation of tankiness and threat values for Druids, based on Taladrils Gear List Stat Values, which he assures me are accurately calculated and tested. https://docs.google.com/spreadsheets/d/e/2PACX-1vSVcmgixKaP9LC-rrqS4D2rojIz48KwKA8QBmJloX1h7f8BkUloVuiw19eR2U5WvVT4InYgnPunUo49/pubhtml#
 
 Simply type /stats or change anything about your gear to start tracking :)
 
