@@ -119,7 +119,7 @@ local function AutoUpdate()
 			elseif GetShapeshiftFormID() == 31 then Display(Boomkin())
 			else Display(Druid())
 			end
-		else Display(Druid())
+		else Display("I am not a Druid! (WIP)")
 	end
 --	Display("Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Dodge Chance: " .. math.floor(GetDodgeChance()+0.5).."\n".."Attack Power: " .. AP().."\n".."Armor Rating: " .. Armor().."\n".."Defense Rating: " .. Defense().."\n".."Tankiness Value: " .. Tankiness().."\n".."Threat Value: " .. Threat());
 end
