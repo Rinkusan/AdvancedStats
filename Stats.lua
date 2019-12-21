@@ -43,8 +43,10 @@ local function PlayerClass()
 	localizedClass, englishClass, classIndex = UnitClass("player");
 	return englishClass;
 end
--- Define Variables for Different Druid Forms
-local Bear = ("Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Dodge Chance: " .. math.floor(GetDodgeChance()+0.5).."\n".."Attack Power: " .. AP().."\n".."Armor Rating: " .. Armor().."\n".."Defense Rating: " .. Defense().."\n".."Tankiness Value: " .. Tankiness().."\n".."Threat Value: " .. Threat())
+-- Define Functions for Different Druid Form Information
+local function Bear()
+	return "Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Dodge Chance: " .. math.floor(GetDodgeChance()+0.5).."\n".."Attack Power: " .. AP().."\n".."Armor Rating: " .. Armor().."\n".."Defense Rating: " .. Defense().."\n".."Tankiness Value: " .. Tankiness().."\n".."Threat Value: " .. Threat();
+end
 local Druid = [[I'm just a Druid]]
 local Travel = [[I'm in Travel Form]]
 local Cat = [[I'm in Cat Form]]
@@ -82,10 +84,10 @@ end
 local function AutoUpdate()
 	if PlayerClass() == "DRUID"
 		then
-			if GetShapeshiftFormID() == 8 then Display(Bear)
+			if GetShapeshiftFormID() == 8 then Display(Bear())
 			elseif GetShapeshiftFormID() == 1 then Display(Cat)
 			elseif GetShapeshiftFormID() == 3 then Display(Travel)
-			elseif GetShapeshiftFormID() == 5 then Display(Bear)
+			elseif GetShapeshiftFormID() == 5 then Display(Bear())
 			else Display(Druid)
 			end
 	end
