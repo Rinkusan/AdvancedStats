@@ -2,10 +2,6 @@
 ## Title: Rinku's Advanced Stats
 ## Notes: Shows some relevant Character stats in a movable Frame.
 ## Current Author: Rinku
-<<<<<<< HEAD
 ## Version: 0.1.7
-=======
-## Version: 0.1.7
->>>>>>> d148e8e055236fa1bd11aa2dbfbc3f76de2e86a1
 
 Stats.lua
