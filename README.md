@@ -16,6 +16,4 @@ I have some plans on what may come next:
 * Adding Resistances (courtesy of @Pippina :))
 * Really Advanced: A menu with tickboxes to select stats you want to track.
 
-But first of all, I need to make sure what is already there is accurate, there is some trouble with the Events that are being registered, as the Information often updates too quickly and ends up being wrong.
-
 Anyway, anyone and everyone who is interested may contact me on Discord: Rinku#1352, Battle.net: Rinkusan#2164, Rinkusan on Barrens.chat or simply Ingame as Rinku or Fui on Gehennas (EU) Horde.
