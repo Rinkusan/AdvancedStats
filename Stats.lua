@@ -1,6 +1,3 @@
--- define slash command to Trigger Stat Tracking
-SLASH_STATS1 = "/stats"
-SLASH_HIDE1 = "/statshide"
 -- define Attack Power calculation
 local function AP()
 	base, posBuff, negBuff = UnitAttackPower("player");
@@ -75,12 +72,4 @@ local function AutoUpdate()
 end
 -- Set Script to run AutoUpdate on Event
 frame:SetScript("OnEvent", AutoUpdate)
--- define Addon Command for Stats
-SlashCmdList["STATS"] = function()
-	AutoUpdate()
-end
--- define Addon Command for Hide/Unregister
-SlashCmdList["HIDE"] = function()
-	frame:Hide()
-end
 
