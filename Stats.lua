@@ -1,3 +1,5 @@
+-- define slash command
+SLASH_STATS1 = "/stats"
 -- define Attack Power calculation
 local function AP()
 	base, posBuff, negBuff = UnitAttackPower("player");
@@ -63,7 +65,6 @@ local frame = CreateFrame("Frame", "MyFrame", UIParent)
 	frame:Hide()
 -- define Text in Frame
 local function Display(message)
-	frame:Show()
 	frame.text:SetText(message)
 end
 -- define Auto Update in Frame
@@ -72,4 +73,8 @@ local function AutoUpdate()
 end
 -- Set Script to run AutoUpdate on Event
 frame:SetScript("OnEvent", AutoUpdate)
-
+-- Set Slash Command Function
+SlashCmdList["STATS"] = function()
+	frame:SetShown(not frame:IsVisible());
+	if frame:IsVisible() then AutoUpdate() end;
+end
