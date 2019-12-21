@@ -49,7 +49,9 @@ local function Bear()
 end
 local Druid = [[I'm just a Druid]]
 local Travel = [[I'm in Travel Form]]
-local Cat = [[I'm in Cat Form]]
+local function Cat()
+	return "Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Attack Power: " .. AP();
+end
 local Boomkin = [[I'm an Owl! Boom Boom!]]
 -- define frame and set attributes
 local frame = CreateFrame("Frame", "MyFrame", UIParent)
@@ -75,6 +77,7 @@ local frame = CreateFrame("Frame", "MyFrame", UIParent)
 	frame:RegisterUnitEvent("UNIT_DAMAGE", "player")
 	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 	frame:RegisterUnitEvent("UNIT_RESISTANCES", "player")
+	frame:RegisterEvent("PLAYER_DAMAGE_DONE_MODS")
 	frame:Hide()
 -- define Text in Frame
 local function Display(message)
@@ -85,7 +88,7 @@ local function AutoUpdate()
 	if PlayerClass() == "DRUID"
 		then
 			if GetShapeshiftFormID() == 8 then Display(Bear())
-			elseif GetShapeshiftFormID() == 1 then Display(Cat)
+			elseif GetShapeshiftFormID() == 1 then Display(Cat())
 			elseif GetShapeshiftFormID() == 3 then Display(Travel)
 			elseif GetShapeshiftFormID() == 5 then Display(Bear())
 			else Display(Druid)
