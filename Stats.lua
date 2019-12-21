@@ -38,6 +38,17 @@ end
 local function Threat()
 	return math.floor(Str() + (Agi()*0.45) + (AP()*0.5) + (GetCritChance("player")*8.97) + (GetHitModifier("player")*6.69) + (GetHaste("player")*9.01))
 end
+-- Define UnitClass
+local function PlayerClass()
+	localizedClass, englishClass, classIndex = UnitClass("player");
+	return englishClass;
+end
+-- Define Variables for Different Druid Forms
+local Bear = ("Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Dodge Chance: " .. math.floor(GetDodgeChance()+0.5).."\n".."Attack Power: " .. AP().."\n".."Armor Rating: " .. Armor().."\n".."Defense Rating: " .. Defense().."\n".."Tankiness Value: " .. Tankiness().."\n".."Threat Value: " .. Threat())
+local Druid = [[I'm just a Druid]]
+local Travel = [[I'm in Travel Form]]
+local Cat = [[I'm in Cat Form]]
+local Boomkin = [[I'm an Owl! Boom Boom!]]
 -- define frame and set attributes
 local frame = CreateFrame("Frame", "MyFrame", UIParent)
 	frame:SetMovable(true)
@@ -69,7 +80,16 @@ local function Display(message)
 end
 -- define Auto Update in Frame
 local function AutoUpdate()
-	Display("Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Dodge Chance: " .. math.floor(GetDodgeChance()+0.5).."\n".."Attack Power: " .. AP().."\n".."Armor Rating: " .. Armor().."\n".."Defense Rating: " .. Defense().."\n".."Tankiness Value: " .. Tankiness().."\n".."Threat Value: " .. Threat());
+	if PlayerClass() == "DRUID"
+		then
+			if GetShapeshiftFormID() == 8 then Display(Bear)
+			elseif GetShapeshiftFormID() == 1 then Display(Cat)
+			elseif GetShapeshiftFormID() == 3 then Display(Travel)
+			elseif GetShapeshiftFormID() == 5 then Display(Bear)
+			else Display(Druid)
+			end
+	end
+--	Display("Hit Chance: " .. GetHitModifier("player").."\n".."Crit Chance: " .. math.floor(GetCritChance()+0.5).."\n".."Dodge Chance: " .. math.floor(GetDodgeChance()+0.5).."\n".."Attack Power: " .. AP().."\n".."Armor Rating: " .. Armor().."\n".."Defense Rating: " .. Defense().."\n".."Tankiness Value: " .. Tankiness().."\n".."Threat Value: " .. Threat());
 end
 -- Set Script to run AutoUpdate on Event
 frame:SetScript("OnEvent", AutoUpdate)
